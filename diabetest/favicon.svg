@@ -1,0 +1,37 @@
+<svg width="100%" viewBox="0 0 690 690" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">DIABETEST — icono v3</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">T como ruta única con curvas cóncavas consistentes en esquinas interiores</desc>
+
+  <defs>
+    <clipPath id="sq"><rect width="680" height="680" rx="152"/></clipPath>
+    <clipPath id="dc">
+      <path d="M 77,122 Q 77,82 117,82 L 305,82 A 286,258 0 0 1 305,598 L 117,598 Q 77,598 77,558 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Fondo squircle: azul muy claro -->
+  <rect width="680" height="680" rx="152" fill="#C8E2FF" style="fill:rgb(200, 226, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Luz suave parte alta del squircle -->
+  <ellipse cx="310" cy="55" rx="310" ry="125" fill="white" opacity="0.20" clip-path="url(#sq)" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.2;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- D shape — azul profundo -->
+  <path d="M 77,122 Q 77,82 117,82 L 305,82 A 286,258 0 0 1 305,598 L 117,598 Q 77,598 77,558 Z" fill="#1045BC" style="fill:rgb(16, 69, 188);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Luz suave parte alta de la D -->
+  <ellipse cx="225" cy="168" rx="206" ry="100" fill="white" opacity="0.055" clip-path="url(#dc)" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.055;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!--
+    T — una sola ruta.
+    Esquinas exteriores: rx=6 (consistente con v2)
+    Esquinas interiores: radio cóncavo=25 (Q bezier con control en el vértice)
+
+    Coordenadas clave:
+      Travesaño : x 160–470, y 195–283   (centro x=315)
+      Tallo     : x 260–370, y 283–530   (centro x=315)
+      or = 6    (outer radius)
+      ir = 25   (inner concave radius)
+  -->
+  <path d="&#10;    M 166,195&#10;    L 464,195&#10;    Q 470,195 470,201&#10;    L 470,277&#10;    Q 470,283 464,283&#10;    L 395,283&#10;    Q 370,283 370,308&#10;    L 370,524&#10;    Q 370,530 364,530&#10;    L 266,530&#10;    Q 260,530 260,524&#10;    L 260,308&#10;    Q 260,283 235,283&#10;    L 166,283&#10;    Q 160,283 160,277&#10;    L 160,201&#10;    Q 160,195 166,195&#10;    Z&#10;  " fill="white" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>
