@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Diabetest</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #1a3a6b;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header .icon-wrap {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .icon-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 22px;
+    }
+
+    header .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    header .logo span {
+      color: #7eb8f7;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    /* ── LANGUAGE PICKER ───────────────────────────────────── */
+    .lang-picker {
+      max-width: 480px;
+      margin: 28px auto 0;
+      padding: 0 24px;
+    }
+
+    .lang-picker .caption {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .lang-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .lang-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 14px 10px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      background: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .lang-btn .native { font-size: 1rem; font-weight: 600; color: #1a1a2e; }
+    .lang-btn .secondary { font-size: 0.75rem; color: #6b7280; }
+
+    .lang-btn.active {
+      border-color: #1a3a6b;
+      background: #eef3fb;
+    }
+
+    .lang-btn.active .native { color: #1a3a6b; }
+
+    main {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 0 24px 80px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8f0fe;
+      color: #1a3a6b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a3a6b;
+      margin: 40px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    ul {
+      margin: 8px 0 12px 20px;
+      color: #374151;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    .highlight-box {
+      background: #eef6ee;
+      border-left: 4px solid #2d7a2d;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: #1a4a1a;
+      font-weight: 500;
+    }
+
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid #1a3a6b;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: #1e3a5f;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: #1a3a6b;
+      color: #fff;
+      text-align: left;
+      padding: 10px 16px;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #374151;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .answer-yes { color: #dc2626; font-weight: 600; }
+    .answer-no  { color: #16a34a; font-weight: 600; }
+
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .lang-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .lang-item strong {
+      display: block;
+      color: #1a3a6b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      background: #1a3a6b;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* ── RTL overrides (Arabic) ────────────────────────────── */
+    html[dir="rtl"] ul { margin: 8px 20px 12px 0; }
+    html[dir="rtl"] th { text-align: right; }
+    html[dir="rtl"] .highlight-box {
+      border-left: none; border-right: 4px solid #2d7a2d;
+      border-radius: 8px 0 0 8px;
+    }
+    html[dir="rtl"] .info-box {
+      border-left: none; border-right: 4px solid #1a3a6b;
+      border-radius: 8px 0 0 8px;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      header { padding: 36px 16px 28px; }
+      .lang-picker { padding: 0 16px; }
+      main { margin: 32px auto; padding: 0 16px 60px; }
+      h2 { font-size: 1.1rem; }
+    }
+
+    @media (min-width: 600px) {
+      .lang-options { grid-template-columns: repeat(3, 1fr); }
+      .lang-picker { max-width: 600px; }
+    }
+
+    @media (min-width: 900px) {
+      main { max-width: 880px; }
+      .lang-picker { max-width: 680px; }
+      header { padding: 56px 24px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="icon-wrap">
+      <img src="data:image/png;base64,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" alt="Diabetest" />
+    </div>
+    <div class="logo">Diabe<span>test</span></div>
+    <p id="hdr-sub">Política de Privacidad · Privacy Policy</p>
+  </header>
+
+  <section class="lang-picker">
+    <div class="caption">Select your language / Selecciona tu idioma</div>
+    <div class="lang-options" id="lang-options"></div>
+  </section>
+
+  <main>
+
+    <span class="badge" id="badge">Última actualización: junio 2026</span>
+
+    <!-- ── RESUMEN ── -->
+    <div class="highlight-box">
+      <p id="summary">✔ Diabetest no recopila, almacena ni transmite ningún dato personal. Tu información nunca sale de tu dispositivo.</p>
+    </div>
+
+    <!-- ── 1 ── -->
+    <h2 id="h2-1">1. Información general</h2>
+    <p id="body-1"></p>
+
+    <!-- ── 2 ── -->
+    <h2 id="h2-2">2. Datos que NO recopilamos</h2>
+    <p id="intro-2"></p>
+    <ul id="list-2"></ul>
+
+    <!-- ── 3 ── -->
+    <h2 id="h2-3">3. Cómo funciona el almacenamiento</h2>
+    <p id="body-3"></p>
+    <div class="info-box">
+      <p id="infobox-3"></p>
+    </div>
+
+    <!-- ── 4 ── -->
+    <h2 id="h2-4">4. Servicios de terceros</h2>
+    <p id="intro-4"></p>
+    <ul id="list-4"></ul>
+
+    <!-- ── 5 ── -->
+    <h2 id="h2-5">5. Función de compartir resultados</h2>
+    <p id="body-5"></p>
+
+    <!-- ── 6 ── -->
+    <h2 id="h2-6">6. Seguridad</h2>
+    <p id="intro-6"></p>
+    <ul id="list-6"></ul>
+
+    <!-- ── 7 ── -->
+    <h2 id="h2-7">7. Resumen de seguridad de datos</h2>
+    <table>
+      <tr>
+        <th id="th-q">Pregunta</th>
+        <th id="th-a">Respuesta</th>
+      </tr>
+      <tr><td id="q7-1"></td><td><span class="answer-no" id="a7-1"></span></td></tr>
+      <tr><td id="q7-2"></td><td><span class="answer-no" id="a7-2"></span></td></tr>
+      <tr><td id="q7-3"></td><td><span class="answer-no" id="a7-3"></span></td></tr>
+      <tr><td id="q7-4"></td><td><span class="answer-no" id="a7-4"></span></td></tr>
+      <tr><td id="q7-5"></td><td><span class="answer-no" id="a7-5"></span></td></tr>
+      <tr><td id="q7-6"></td><td><span class="answer-no" id="a7-6"></span></td></tr>
+    </table>
+
+    <!-- ── 8 ── -->
+    <h2 id="h2-8">8. Idiomas disponibles</h2>
+    <div class="lang-grid">
+      <div class="lang-item"><strong>Español</strong>es</div>
+      <div class="lang-item"><strong>English</strong>en</div>
+      <div class="lang-item"><strong>中文</strong>zh</div>
+      <div class="lang-item"><strong>हिन्दी</strong>hi</div>
+      <div class="lang-item"><strong>العربية</strong>ar</div>
+    </div>
+
+    <!-- ── 9 ── -->
+    <h2 id="h2-9">9. Aviso médico</h2>
+    <div class="info-box">
+      <p id="infobox-9"></p>
+    </div>
+
+    <!-- ── 10 ── -->
+    <h2 id="h2-10">10. Cambios a esta política</h2>
+    <p id="body-10"></p>
+
+    <!-- ── 11 ── -->
+    <h2 id="h2-11">11. Contacto</h2>
+    <p id="intro-11"></p>
+    <p>
+      <strong>Assistant Healthcare Technologies</strong><br>
+      📧 <a href="mailto:rodrigopalomerabr@gmail.com" style="color:#1a3a6b;">rodrigopalomerabr@gmail.com</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <strong>Diabetest</strong> · Assistant Healthcare Technologies · 2026<br>
+    <span id="footer-tagline">Basado en el cuestionario FINRISK · Validado clínicamente</span>
+  </footer>
+
+  <script>
+    const LANGS = [
+      { code: "es", native: "Español",  secondary: "Spanish" },
+      { code: "en", native: "English",  secondary: "English" },
+      { code: "zh", native: "中文",      secondary: "Chinese" },
+      { code: "hi", native: "हिन्दी",    secondary: "Hindi"   },
+      { code: "ar", native: "العربية",  secondary: "Arabic"  },
+    ];
+
+    const T = {
+      es: {
+        title: `Política de Privacidad — Diabetest`,
+        hdrSub: `Política de Privacidad · Privacy Policy`,
+        badge: `Última actualización: junio 2026`,
+        summary: `✔ Diabetest no recopila, almacena ni transmite ningún dato personal. Tu información nunca sale de tu dispositivo.`,
+        h2_1: `1. Información general`,
+        body_1: `<strong>Diabetest</strong> es una aplicación móvil de evaluación de riesgo de prediabetes y diabetes gestacional, desarrollada por <strong>Assistant Healthcare Technologies</strong>. Esta política describe cómo tratamos la información de los usuarios de la aplicación.`,
+        h2_2: `2. Datos que NO recopilamos`,
+        intro_2: `Diabetest <strong>no recopila, almacena, transmite ni comparte</strong> ningún tipo de dato personal, incluyendo:`,
+        list_2: [`Nombre, dirección, correo electrónico o número de teléfono`, `Datos biométricos (peso, estatura, IMC)`, `Información de salud o respuestas del test`, `Ubicación geográfica`, `Identificadores de dispositivo`, `Datos de uso o analíticas`],
+        h2_3: `3. Cómo funciona el almacenamiento`,
+        body_3: `Todas las respuestas que introduces durante el test se procesan <strong>exclusivamente en la memoria local de tu dispositivo</strong>. Al pulsar el botón <em>"Hacer el test nuevamente"</em> o cerrar la aplicación, estos datos se eliminan permanentemente.`,
+        infobox_3: `📴 La aplicación funciona completamente sin conexión a internet. No se realiza ninguna petición de red durante el uso normal de la app.`,
+        h2_4: `4. Servicios de terceros`,
+        intro_4: `Diabetest <strong>no utiliza ningún servicio de terceros</strong>, incluyendo:`,
+        list_4: [`Servicios de analíticas (Google Analytics, Firebase, etc.)`, `Redes publicitarias`, `CDNs de fuentes externas (Google Fonts u otros)`, `Servicios de crash reporting`, `Plataformas de autenticación`],
+        h2_5: `5. Función de compartir resultados`,
+        body_5: `La app incluye un botón opcional para compartir tus resultados. Esta función utiliza únicamente el sistema nativo de compartir de tu dispositivo (Android Share Sheet). El texto generado <strong>no se envía a ningún servidor</strong> de Diabetest; se transfiere directamente a la aplicación que tú elijas (mensajería, correo, etc.).`,
+        h2_6: `6. Seguridad`,
+        intro_6: `La aplicación implementa las siguientes medidas de seguridad:`,
+        list_6: [`<strong>Content Security Policy (CSP)</strong> estricta que bloquea conexiones externas`, `<strong>Tiempo de sesión</strong>: las respuestas se borran automáticamente tras 15 minutos de inactividad`, `<strong>Validación de entradas</strong>: todas las respuestas son validadas antes de procesarse`, `<strong>Sin fuentes externas</strong>: la app usa únicamente fuentes del sistema operativo`],
+        h2_7: `7. Resumen de seguridad de datos`,
+        th_q: `Pregunta`, th_a: `Respuesta`,
+        q7: [`¿Se recopilan datos personales?`, `¿Se comparten datos con terceros?`, `¿Se almacenan datos en servidores?`, `¿Se usan cookies o rastreadores?`, `¿Requiere conexión a internet?`, `¿El usuario puede borrar sus datos?`],
+        a7: [`No`, `No`, `No`, `No`, `No`, `Sí — botón "Hacer el test nuevamente"`],
+        h2_8: `8. Idiomas disponibles`,
+        h2_9: `9. Aviso médico`,
+        infobox_9: `Diabetest es una herramienta informativa basada en el cuestionario FINRISK. No constituye un diagnóstico clínico y no sustituye la valoración de un profesional de la salud. Si tu resultado indica riesgo moderado, alto o muy alto, consulta a tu médico.`,
+        h2_10: `10. Cambios a esta política`,
+        body_10: `Si en el futuro se realizaran cambios relevantes a esta política, se notificará a los usuarios mediante una actualización de la aplicación en Google Play Store. La fecha de "Última actualización" al inicio de este documento se actualizará correspondientemente.`,
+        h2_11: `11. Contacto`,
+        intro_11: `Para cualquier pregunta relacionada con esta política de privacidad, puedes escribirnos a:`,
+        footerTagline: `Basado en el cuestionario FINRISK · Validado clínicamente`,
+      },
+      en: {
+        title: `Privacy Policy — Diabetest`,
+        hdrSub: `Privacy Policy · Política de Privacidad`,
+        badge: `Last updated: June 2026`,
+        summary: `✔ Diabetest does not collect, store, or transmit any personal data. Your information never leaves your device.`,
+        h2_1: `1. General Information`,
+        body_1: `<strong>Diabetest</strong> is a mobile app for assessing prediabetes and gestational diabetes risk, developed by <strong>Assistant Healthcare Technologies</strong>. This policy describes how we handle app users' information.`,
+        h2_2: `2. Data We Do NOT Collect`,
+        intro_2: `Diabetest <strong>does not collect, store, transmit, or share</strong> any type of personal data, including:`,
+        list_2: [`Name, address, email, or phone number`, `Biometric data (weight, height, BMI)`, `Health information or test answers`, `Geographic location`, `Device identifiers`, `Usage or analytics data`],
+        h2_3: `3. How Storage Works`,
+        body_3: `All answers you enter during the test are processed <strong>exclusively in your device's local memory</strong>. Pressing the <em>"Take the test again"</em> button or closing the app permanently deletes this data.`,
+        infobox_3: `📴 The app works completely offline. No network request is made during normal use of the app.`,
+        h2_4: `4. Third-Party Services`,
+        intro_4: `Diabetest <strong>does not use any third-party services</strong>, including:`,
+        list_4: [`Analytics services (Google Analytics, Firebase, etc.)`, `Advertising networks`, `External font CDNs (Google Fonts or others)`, `Crash reporting services`, `Authentication platforms`],
+        h2_5: `5. Share Results Feature`,
+        body_5: `The app includes an optional button to share your results. This feature uses only your device's native share system (Android Share Sheet). The generated text <strong>is not sent to any Diabetest server</strong>; it is transferred directly to the app you choose (messaging, email, etc.).`,
+        h2_6: `6. Security`,
+        intro_6: `The app implements the following security measures:`,
+        list_6: [`Strict <strong>Content Security Policy (CSP)</strong> that blocks external connections`, `<strong>Session timeout</strong>: answers are automatically cleared after 15 minutes of inactivity`, `<strong>Input validation</strong>: all answers are validated before processing`, `<strong>No external fonts</strong>: the app uses only operating system fonts`],
+        h2_7: `7. Data Security Summary`,
+        th_q: `Question`, th_a: `Answer`,
+        q7: [`Is personal data collected?`, `Is data shared with third parties?`, `Is data stored on servers?`, `Are cookies or trackers used?`, `Does it require an internet connection?`, `Can the user delete their data?`],
+        a7: [`No`, `No`, `No`, `No`, `No`, `Yes — "Take the test again" button`],
+        h2_8: `8. Available Languages`,
+        h2_9: `9. Medical Notice`,
+        infobox_9: `Diabetest is an informational tool based on the FINRISK questionnaire. It does not constitute a clinical diagnosis and does not replace the assessment of a healthcare professional. If your result indicates moderate, high, or very high risk, consult your doctor.`,
+        h2_10: `10. Changes to This Policy`,
+        body_10: `If relevant changes are made to this policy in the future, users will be notified through an app update on Google Play Store. The "Last updated" date at the top of this document will be updated accordingly.`,
+        h2_11: `11. Contact`,
+        intro_11: `For any questions related to this privacy policy, you can write to us at:`,
+        footerTagline: `Based on the FINRISK questionnaire · Clinically validated`,
+      },
+      zh: {
+        title: `隐私政策 — Diabetest`,
+        hdrSub: `隐私政策 · Privacy Policy`,
+        badge: `最后更新：2026 年 6 月`,
+        summary: `✔ Diabetest 不收集、存储或传输任何个人数据。您的信息永远不会离开您的设备。`,
+        h2_1: `1. 一般信息`,
+        body_1: `<strong>Diabetest</strong> 是由 <strong>Assistant Healthcare Technologies</strong> 开发的糖尿病前期和妊娠期糖尿病风险评估移动应用。本政策说明我们如何处理应用用户的信息。`,
+        h2_2: `2. 我们不收集的数据`,
+        intro_2: `Diabetest <strong>不收集、存储、传输或共享</strong>任何个人数据，包括：`,
+        list_2: [`姓名、地址、电子邮件或电话号码`, `生物特征数据（体重、身高、BMI）`, `健康信息或测试答案`, `地理位置`, `设备标识符`, `使用或分析数据`],
+        h2_3: `3. 存储方式`,
+        body_3: `您在测试中输入的所有答案<strong>仅在您设备的本地内存中处理</strong>。点击<em>"重新测试"</em>按钮或关闭应用将永久删除这些数据。`,
+        infobox_3: `📴 该应用完全离线运行。正常使用期间不会发出任何网络请求。`,
+        h2_4: `4. 第三方服务`,
+        intro_4: `Diabetest <strong>不使用任何第三方服务</strong>，包括：`,
+        list_4: [`分析服务（Google Analytics、Firebase 等）`, `广告网络`, `外部字体 CDN（Google Fonts 等）`, `崩溃报告服务`, `身份验证平台`],
+        h2_5: `5. 分享结果功能`,
+        body_5: `应用包含一个可选按钮，用于分享您的结果。此功能仅使用您设备的原生分享系统（Android 分享面板）。生成的文本<strong>不会发送到 Diabetest 的任何服务器</strong>；它会直接传输到您选择的应用（消息、邮件等）。`,
+        h2_6: `6. 安全性`,
+        intro_6: `该应用实施以下安全措施：`,
+        list_6: [`严格的<strong>内容安全策略（CSP）</strong>，阻止外部连接`, `<strong>会话超时</strong>：15 分钟不活动后自动清除答案`, `<strong>输入验证</strong>：所有答案在处理前均经过验证`, `<strong>无外部字体</strong>：应用仅使用操作系统字体`],
+        h2_7: `7. 数据安全摘要`,
+        th_q: `问题`, th_a: `答案`,
+        q7: [`是否收集个人数据？`, `是否与第三方共享数据？`, `是否将数据存储在服务器上？`, `是否使用 Cookie 或跟踪器？`, `是否需要网络连接？`, `用户能否删除自己的数据？`],
+        a7: [`否`, `否`, `否`, `否`, `否`, `是 — "重新测试"按钮`],
+        h2_8: `8. 可用语言`,
+        h2_9: `9. 医疗提示`,
+        infobox_9: `Diabetest 是基于 FINRISK 问卷的信息工具。它不构成临床诊断，也不能替代医疗专业人员的评估。如果您的结果显示中度、高度或极高风险，请咨询您的医生。`,
+        h2_10: `10. 本政策的变更`,
+        body_10: `如果未来对本政策进行重大更改，将通过 Google Play 商店的应用更新通知用户。本文档顶部的"最后更新"日期将相应更新。`,
+        h2_11: `11. 联系方式`,
+        intro_11: `如有任何与本隐私政策相关的问题，您可以通过以下方式与我们联系：`,
+        footerTagline: `基于 FINRISK 问卷 · 经临床验证`,
+      },
+      hi: {
+        title: `गोपनीयता नीति — Diabetest`,
+        hdrSub: `गोपनीयता नीति · Privacy Policy`,
+        badge: `अंतिम अपडेट: जून 2026`,
+        summary: `✔ Diabetest कोई भी व्यक्तिगत डेटा एकत्र, संग्रहीत या प्रसारित नहीं करता। आपकी जानकारी कभी भी आपके डिवाइस से बाहर नहीं जाती।`,
+        h2_1: `1. सामान्य जानकारी`,
+        body_1: `<strong>Diabetest</strong>, <strong>Assistant Healthcare Technologies</strong> द्वारा विकसित प्रीडायबिटीज और गर्भकालीन मधुमेह जोखिम मूल्यांकन के लिए एक मोबाइल ऐप है। यह नीति बताती है कि हम ऐप उपयोगकर्ताओं की जानकारी को कैसे संभालते हैं।`,
+        h2_2: `2. डेटा जो हम एकत्र नहीं करते`,
+        intro_2: `Diabetest किसी भी प्रकार के व्यक्तिगत डेटा को <strong>एकत्र, संग्रहीत, प्रसारित या साझा नहीं करता</strong>, जिसमें शामिल हैं:`,
+        list_2: [`नाम, पता, ईमेल या फ़ोन नंबर`, `बायोमेट्रिक डेटा (वजन, ऊंचाई, BMI)`, `स्वास्थ्य जानकारी या परीक्षण उत्तर`, `भौगोलिक स्थान`, `डिवाइस पहचानकर्ता`, `उपयोग या एनालिटिक्स डेटा`],
+        h2_3: `3. भंडारण कैसे काम करता है`,
+        body_3: `परीक्षण के दौरान आपके द्वारा दर्ज किए गए सभी उत्तर <strong>केवल आपके डिवाइस की लोकल मेमोरी में संसाधित होते हैं</strong>। <em>"परीक्षण फिर से लें"</em> बटन दबाने या ऐप बंद करने पर यह डेटा स्थायी रूप से हटा दिया जाता है।`,
+        infobox_3: `📴 ऐप पूरी तरह से ऑफ़लाइन काम करता है। सामान्य उपयोग के दौरान कोई नेटवर्क रिक्वेस्ट नहीं की जाती।`,
+        h2_4: `4. तृतीय-पक्ष सेवाएं`,
+        intro_4: `Diabetest <strong>किसी भी तृतीय-पक्ष सेवा का उपयोग नहीं करता</strong>, जिसमें शामिल हैं:`,
+        list_4: [`एनालिटिक्स सेवाएं (Google Analytics, Firebase, आदि)`, `विज्ञापन नेटवर्क`, `बाहरी फ़ॉन्ट CDN (Google Fonts या अन्य)`, `क्रैश रिपोर्टिंग सेवाएं`, `प्रमाणीकरण प्लेटफ़ॉर्म`],
+        h2_5: `5. परिणाम साझा करने की सुविधा`,
+        body_5: `ऐप में आपके परिणाम साझा करने के लिए एक वैकल्पिक बटन शामिल है। यह सुविधा केवल आपके डिवाइस के नेटिव शेयर सिस्टम (Android Share Sheet) का उपयोग करती है। जनरेट किया गया टेक्स्ट <strong>Diabetest के किसी सर्वर पर नहीं भेजा जाता</strong>; यह सीधे आपके चुने हुए ऐप (मैसेजिंग, ईमेल, आदि) में स्थानांतरित होता है।`,
+        h2_6: `6. सुरक्षा`,
+        intro_6: `ऐप निम्नलिखित सुरक्षा उपाय लागू करता है:`,
+        list_6: [`सख्त <strong>कंटेंट सिक्योरिटी पॉलिसी (CSP)</strong> जो बाहरी कनेक्शन को ब्लॉक करती है`, `<strong>सेशन टाइमआउट</strong>: 15 मिनट की निष्क्रियता के बाद उत्तर स्वचालित रूप से मिटा दिए जाते हैं`, `<strong>इनपुट वैलिडेशन</strong>: प्रोसेसिंग से पहले सभी उत्तर सत्यापित किए जाते हैं`, `<strong>कोई बाहरी फ़ॉन्ट नहीं</strong>: ऐप केवल ऑपरेटिंग सिस्टम के फ़ॉन्ट का उपयोग करता है`],
+        h2_7: `7. डेटा सुरक्षा सारांश`,
+        th_q: `प्रश्न`, th_a: `उत्तर`,
+        q7: [`क्या व्यक्तिगत डेटा एकत्र किया जाता है?`, `क्या डेटा तृतीय पक्षों के साथ साझा किया जाता है?`, `क्या डेटा सर्वर पर संग्रहीत किया जाता है?`, `क्या कुकीज़ या ट्रैकर्स का उपयोग किया जाता है?`, `क्या इंटरनेट कनेक्शन आवश्यक है?`, `क्या उपयोगकर्ता अपना डेटा हटा सकता है?`],
+        a7: [`नहीं`, `नहीं`, `नहीं`, `नहीं`, `नहीं`, `हाँ — "परीक्षण फिर से लें" बटन`],
+        h2_8: `8. उपलब्ध भाषाएं`,
+        h2_9: `9. मेडिकल नोटिस`,
+        infobox_9: `Diabetest, FINRISK प्रश्नावली पर आधारित एक सूचनात्मक उपकरण है। यह नैदानिक निदान नहीं है और स्वास्थ्य पेशेवर के मूल्यांकन का विकल्प नहीं है। यदि आपका परिणाम मध्यम, उच्च या बहुत उच्च जोखिम दिखाता है, तो अपने डॉक्टर से सलाह लें।`,
+        h2_10: `10. इस नीति में परिवर्तन`,
+        body_10: `यदि भविष्य में इस नीति में महत्वपूर्ण परिवर्तन किए जाते हैं, तो उपयोगकर्ताओं को Google Play Store पर ऐप अपडेट के माध्यम से सूचित किया जाएगा। इस दस्तावेज़ के शीर्ष पर "अंतिम अपडेट" तिथि को तदनुसार अपडेट किया जाएगा।`,
+        h2_11: `11. संपर्क`,
+        intro_11: `इस गोपनीयता नीति से संबंधित किसी भी प्रश्न के लिए, आप हमें यहां लिख सकते हैं:`,
+        footerTagline: `FINRISK प्रश्नावली पर आधारित · नैदानिक रूप से मान्य`,
+      },
+      ar: {
+        title: `سياسة الخصوصية — Diabetest`,
+        hdrSub: `سياسة الخصوصية · Privacy Policy`,
+        badge: `آخر تحديث: يونيو 2026`,
+        summary: `✔ لا يجمع Diabetest أو يخزن أو ينقل أي بيانات شخصية. معلوماتك لا تخرج من جهازك أبداً.`,
+        h2_1: `1. معلومات عامة`,
+        body_1: `<strong>Diabetest</strong> هو تطبيق محمول لتقييم خطر مقدمات السكري وسكري الحمل، طورته شركة <strong>Assistant Healthcare Technologies</strong>. تصف هذه السياسة كيفية تعاملنا مع معلومات مستخدمي التطبيق.`,
+        h2_2: `2. البيانات التي لا نجمعها`,
+        intro_2: `لا يقوم Diabetest بـ<strong>جمع أو تخزين أو نقل أو مشاركة</strong> أي نوع من البيانات الشخصية، بما في ذلك:`,
+        list_2: [`الاسم أو العنوان أو البريد الإلكتروني أو رقم الهاتف`, `البيانات الحيوية (الوزن، الطول، مؤشر كتلة الجسم)`, `المعلومات الصحية أو إجابات الاختبار`, `الموقع الجغرافي`, `معرّفات الجهاز`, `بيانات الاستخدام أو التحليلات`],
+        h2_3: `3. كيف يعمل التخزين`,
+        body_3: `تتم معالجة جميع الإجابات التي تدخلها أثناء الاختبار <strong>حصرياً في الذاكرة المحلية لجهازك</strong>. عند الضغط على زر <em>"إعادة الاختبار"</em> أو إغلاق التطبيق، يتم حذف هذه البيانات بشكل دائم.`,
+        infobox_3: `📴 يعمل التطبيق بالكامل دون اتصال بالإنترنت. لا يتم إجراء أي طلب شبكة خلال الاستخدام العادي للتطبيق.`,
+        h2_4: `4. خدمات الطرف الثالث`,
+        intro_4: `لا يستخدم Diabetest <strong>أي خدمات من طرف ثالث</strong>، بما في ذلك:`,
+        list_4: [`خدمات التحليلات (Google Analytics، Firebase، إلخ)`, `شبكات الإعلانات`, `خدمات الخطوط الخارجية (Google Fonts أو غيرها)`, `خدمات تقارير الأعطال`, `منصات المصادقة`],
+        h2_5: `5. ميزة مشاركة النتائج`,
+        body_5: `يتضمن التطبيق زرًا اختياريًا لمشاركة نتائجك. تستخدم هذه الميزة فقط نظام المشاركة الأصلي لجهازك (Android Share Sheet). <strong>لا يتم إرسال النص الناتج إلى أي خادم تابع لـ Diabetest</strong>؛ يتم نقله مباشرة إلى التطبيق الذي تختاره (رسائل، بريد إلكتروني، إلخ).`,
+        h2_6: `6. الأمان`,
+        intro_6: `يطبق التطبيق تدابير الأمان التالية:`,
+        list_6: [`<strong>سياسة أمان محتوى (CSP)</strong> صارمة تحظر الاتصالات الخارجية`, `<strong>مهلة الجلسة</strong>: يتم حذف الإجابات تلقائياً بعد 15 دقيقة من عدم النشاط`, `<strong>التحقق من صحة الإدخال</strong>: يتم التحقق من جميع الإجابات قبل المعالجة`, `<strong>بدون خطوط خارجية</strong>: يستخدم التطبيق فقط خطوط نظام التشغيل`],
+        h2_7: `7. ملخص أمان البيانات`,
+        th_q: `السؤال`, th_a: `الإجابة`,
+        q7: [`هل تُجمع بيانات شخصية؟`, `هل تُشارك البيانات مع أطراف ثالثة؟`, `هل تُخزن البيانات على خوادم؟`, `هل تُستخدم ملفات تعريف الارتباط أو أدوات التتبع؟`, `هل يتطلب اتصالاً بالإنترنت؟`, `هل يمكن للمستخدم حذف بياناته؟`],
+        a7: [`لا`, `لا`, `لا`, `لا`, `لا`, `نعم — زر "إعادة الاختبار"`],
+        h2_8: `8. اللغات المتوفرة`,
+        h2_9: `9. تنبيه طبي`,
+        infobox_9: `Diabetest هو أداة معلوماتية تستند إلى استبيان FINRISK. لا يشكل تشخيصاً سريرياً ولا يحل محل تقييم أخصائي الرعاية الصحية. إذا أشارت نتيجتك إلى خطر متوسط أو مرتفع أو مرتفع جداً، استشر طبيبك.`,
+        h2_10: `10. التغييرات على هذه السياسة`,
+        body_10: `إذا تم إجراء تغييرات مهمة على هذه السياسة في المستقبل، سيتم إعلام المستخدمين من خلال تحديث للتطبيق في Google Play Store. سيتم تحديث تاريخ "آخر تحديث" في أعلى هذا المستند وفقاً لذلك.`,
+        h2_11: `11. التواصل`,
+        intro_11: `لأي استفسارات تتعلق بسياسة الخصوصية هذه، يمكنك التواصل معنا عبر:`,
+        footerTagline: `مبني على استبيان FINRISK · معتمد سريرياً`,
+      },
+    };
+
+    let currentLang = "es";
+
+    function renderLangButtons() {
+      const wrap = document.getElementById("lang-options");
+      wrap.innerHTML = "";
+      LANGS.forEach(l => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "lang-btn" + (l.code === currentLang ? " active" : "");
+        btn.setAttribute("aria-pressed", l.code === currentLang ? "true" : "false");
+        btn.innerHTML = `<span class="native">${l.native}</span><span class="secondary">${l.secondary}</span>`;
+        btn.addEventListener("click", () => setLang(l.code));
+        wrap.appendChild(btn);
+      });
+    }
+
+    function setList(id, items) {
+      document.getElementById(id).innerHTML = items.map(i => `<li>${i}</li>`).join("");
+    }
+
+    function setLang(code) {
+      const t = T[code];
+      if (!t) return;
+      currentLang = code;
+
+      document.documentElement.lang = code;
+      document.documentElement.dir = code === "ar" ? "rtl" : "ltr";
+      document.title = t.title;
+
+      document.getElementById("hdr-sub").textContent = t.hdrSub;
+      document.getElementById("badge").textContent = t.badge;
+      document.getElementById("summary").textContent = t.summary;
+
+      document.getElementById("h2-1").textContent = t.h2_1;
+      document.getElementById("body-1").innerHTML = t.body_1;
+
+      document.getElementById("h2-2").textContent = t.h2_2;
+      document.getElementById("intro-2").innerHTML = t.intro_2;
+      setList("list-2", t.list_2);
+
+      document.getElementById("h2-3").textContent = t.h2_3;
+      document.getElementById("body-3").innerHTML = t.body_3;
+      document.getElementById("infobox-3").textContent = t.infobox_3;
+
+      document.getElementById("h2-4").textContent = t.h2_4;
+      document.getElementById("intro-4").innerHTML = t.intro_4;
+      setList("list-4", t.list_4);
+
+      document.getElementById("h2-5").textContent = t.h2_5;
+      document.getElementById("body-5").innerHTML = t.body_5;
+
+      document.getElementById("h2-6").textContent = t.h2_6;
+      document.getElementById("intro-6").innerHTML = t.intro_6;
+      setList("list-6", t.list_6);
+
+      document.getElementById("h2-7").textContent = t.h2_7;
+      document.getElementById("th-q").textContent = t.th_q;
+      document.getElementById("th-a").textContent = t.th_a;
+      for (let i = 0; i < 6; i++) {
+        document.getElementById(`q7-${i + 1}`).textContent = t.q7[i];
+        document.getElementById(`a7-${i + 1}`).textContent = t.a7[i];
+      }
+
+      document.getElementById("h2-8").textContent = t.h2_8;
+      document.getElementById("h2-9").textContent = t.h2_9;
+      document.getElementById("infobox-9").textContent = t.infobox_9;
+
+      document.getElementById("h2-10").textContent = t.h2_10;
+      document.getElementById("body-10").textContent = t.body_10;
+
+      document.getElementById("h2-11").textContent = t.h2_11;
+      document.getElementById("intro-11").textContent = t.intro_11;
+
+      document.getElementById("footer-tagline").textContent = t.footerTagline;
+
+      renderLangButtons();
+    }
+
+    setLang("es");
+  </script>
+
+</body>
+</html>
